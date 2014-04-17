@@ -1,0 +1,24 @@
+#include "myhead.h"
+/*
+输入递增排序的数组和一个数字s，找出数组中和为s的两个数对
+*/
+void deal(int num[],int n,int tar){
+	int i=0,j=n-1;
+	while(i<j){
+		if( num[i]+num[j] > tar )
+			j--;
+		else if(num[i]+num[j] < tar)
+			i++;
+		else{
+			cout<<num[i]<<"+"<<num[j]<<"="<<tar<<endl;
+			i++;
+		}
+	}
+}
+
+int main(){
+	int A[]={1,2,4,7,11,15};
+	int target=15;
+	deal(A,6,target);
+
+}
